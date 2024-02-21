@@ -1,13 +1,13 @@
 //
-//  FeatherSQLDatabaseTests.swift
-//  FeatherSQLDatabaseTests
+//  FeatherRelationalDatabaseDriverPostgresTests.swift
+//  FeatherRelationalDatabaseDriverPostgresTests
 //
 //  Created by Tibor Bodecs on 2023. 01. 16..
 //
 
 import NIO
 import XCTest
-import FeatherService
+import FeatherComponent
 import FeatherRelationalDatabase
 import FeatherRelationalDatabaseDriverPostgres
 import PostgresKit
@@ -32,7 +32,7 @@ final class FeatherRelationalDatabaseDriverPostgresTests: XCTestCase {
     
     func testExample() async throws {
         do {
-            let registry = ServiceRegistry()
+            let registry = ComponentRegistry()
             
             let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 1)
             let threadPool = NIOThreadPool(numberOfThreads: 1)
@@ -51,15 +51,15 @@ final class FeatherRelationalDatabaseDriverPostgresTests: XCTestCase {
             )
 
             try await registry.addRelationalDatabase(
-                PostgresRelationalDatabaseServiceContext(
+                PostgresRelationalDatabaseComponentContext(
                     eventLoopGroup: eventLoopGroup,
                     connectionSource: connectionSource
                 )
             )
 
             try await registry.run()
-            let dbService = try await registry.relationalDatabase()
-            let db = try await dbService.connection()
+            let dbComponent = try await registry.relationalDatabase()
+            let db = try await dbComponent.connection()
 
             do {
                 
