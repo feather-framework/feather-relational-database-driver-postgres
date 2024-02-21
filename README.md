@@ -1,6 +1,6 @@
 # Feather SQL Database
 
-An abstract sql-database service for Feather CMS.
+An abstract sql-database component for Feather CMS.
 
 ## Getting started
 

@@ -1,14 +1,14 @@
 //
-//  SQLDatabaseContext.swift
-//  FeatherServiceTests
+//  PostgresRelationalDatabaseComponentContext.swift
+//  PostgresRelationalDatabaseDriverPostgres
 //
 //  Created by Tibor Bodecs on 18/11/2023.
 //
 
-import FeatherService
+import FeatherComponent
 @preconcurrency import PostgresKit
 
-public struct PostgresRelationalDatabaseServiceContext: ServiceContext {
+public struct PostgresRelationalDatabaseComponentContext: ComponentContext {
 
     let eventLoopGroup: EventLoopGroup
     let connectionSource: PostgresConnectionSource
@@ -21,7 +21,7 @@ public struct PostgresRelationalDatabaseServiceContext: ServiceContext {
         self.connectionSource = connectionSource
     }
 
-    public func make() throws -> ServiceBuilder {
-        PostgresRelationalDatabaseServiceBuilder(context: self)
+    public func make() throws -> ComponentBuilder {
+        PostgresRelationalDatabaseComponentBuilder(context: self)
     }
 }

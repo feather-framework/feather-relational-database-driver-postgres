@@ -1,31 +1,31 @@
 //
-//  File 2.swift
-//  
+//  PostgresRelationalDatabaseComponent.swift
+//  PostgresRelationalDatabaseDriverPostgres
 //
 //  Created by Tibor Bodecs on 03/12/2023.
 //
 
-import FeatherService
+import FeatherComponent
 import FeatherRelationalDatabase
 import SQLKit
 import PostgresKit
 @preconcurrency import AsyncKit
 
 @dynamicMemberLookup
-struct PostgresRelationalDatabaseService: RelationalDatabaseService {
+struct PostgresRelationalDatabaseComponent: RelationalDatabaseComponent {
     
-    public let config: ServiceConfig
+    public let config: ComponentConfig
     let pool: EventLoopGroupConnectionPool<PostgresConnectionSource>
 
     subscript<T>(
-        dynamicMember keyPath: KeyPath<PostgresRelationalDatabaseServiceContext, T>
+        dynamicMember keyPath: KeyPath<PostgresRelationalDatabaseComponentContext, T>
     ) -> T {
-        let context = config.context as! PostgresRelationalDatabaseServiceContext
+        let context = config.context as! PostgresRelationalDatabaseComponentContext
         return context[keyPath: keyPath]
     }
 
     init(
-        config: ServiceConfig,
+        config: ComponentConfig,
         pool: EventLoopGroupConnectionPool<PostgresConnectionSource>
     ) {
         self.config = config

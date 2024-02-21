@@ -10,21 +10,21 @@
       }
     },
     {
+      "identity" : "feather-component",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/feather-framework/feather-component",
+      "state" : {
+        "revision" : "d8373cf9ab5db3e7b21fbcb8e6d1d5718b3bb73b",
+        "version" : "0.4.0"
+      }
+    },
+    {
       "identity" : "feather-relational-database",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/feather-framework/feather-relational-database",
       "state" : {
-        "revision" : "75f790dfa677c7eb1cb665cbeb66e866f2a7e50e",
-        "version" : "0.1.1"
-      }
-    },
-    {
-      "identity" : "feather-service",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/feather-framework/feather-service.git",
-      "state" : {
-        "revision" : "9834b3fe842b7228c66c08d0d23ec5dd7fc693cd",
-        "version" : "0.3.0"
+        "revision" : "fd4fc17854f3a17fe33b1a80c02615bd9da34a7a",
+        "version" : "0.2.0"
       }
     },
     {
@@ -61,6 +61,15 @@
       "state" : {
         "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
         "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-async-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-async-algorithms.git",
+      "state" : {
+        "revision" : "da4e36f86544cdf733a40d59b3a2267e3a7bbf36",
+        "version" : "1.0.0"
       }
     },
     {
@@ -142,6 +151,15 @@
       "state" : {
         "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
         "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-service-lifecycle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-server/swift-service-lifecycle",
+      "state" : {
+        "revision" : "55f45e39dd23c6cad82d4d529e22961cb5e493aa",
+        "version" : "2.4.0"
       }
     }
   ],
